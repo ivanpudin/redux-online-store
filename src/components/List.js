@@ -5,6 +5,7 @@ import Product from "./Product";
 
 const List = () => {
     const products = useAppSelector(state => state.products.products);
+    const cartItems = useAppSelector(state => state.cart);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -14,7 +15,7 @@ const List = () => {
     return (
         <div>
             {products.map((product) => (
-                <Product key={product.id} {...product} />
+                <Product key={product.id} {...product} cartItems={cartItems} />
             ))}
         </div>
     );
