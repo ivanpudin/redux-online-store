@@ -1,8 +1,17 @@
+import { Container } from "react-bootstrap";
+import { useAppSelector } from "../app/hooks";
+import Product from "./Product";
+
 const Cart = () => {
+    const cartItems = useAppSelector(state => state.cart.cart);
+    
     return (
-        <div>
-            Cart will be here
-        </div>
+        <Container>
+            {cartItems.length === 0 && <p>Your cart is empty</p>}
+            {cartItems.map((item) => (
+                <Product {...item}/>
+            ))}
+        </Container>
     );
 };
 
