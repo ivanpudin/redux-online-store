@@ -1,5 +1,7 @@
 const Product = (props) => {
-    const { image, title, price } = props;
+    const { image, title, price, rating, description } = props;
+
+    console.log('Props:', props);
 
     return (
         <section className="Detail">
@@ -12,9 +14,10 @@ const Product = (props) => {
                     <h2>{title}</h2>
                 </div>
                 <div className="Detail-info">
-                    <span className="Detail-info-price">{price}</span>
-                    <span className="Detail-info-rating">Rating: {}</span>
+                    <span className="Detail-info-price">{price} €</span>
+                    <span className="Detail-info-rating">Rating: {rating.rate}</span>
                 </div>
+                <p className="Detail-info-description">{description}</p>
             </article>
         </section>
     );
