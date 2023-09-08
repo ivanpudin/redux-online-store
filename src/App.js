@@ -8,8 +8,8 @@ import Cart from './components/Cart';
 function App() {
   return (
     <div>
-      <StoreNavbar />
       <BrowserRouter>
+        <StoreNavbar />
         <Routes>
           <Route path="/" element={<List />} />
           <Route path="/cart" element={<Cart />} />
